@@ -22,24 +22,24 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Real Estate Marketplace",
-    desc: "Next.js 14 with TypeScript, Mapbox, NextAuth. Deployed on AWS ECS.",
-    github: "https://github.com/cornelius-ezeh/pwan-marketplace",
-    live: "https://pwanhomes.corneliusezeh.dev",
+    title: "Geospatial and Satellite Imagery Services",
+    desc: "React.js with TypeScript, Leaflet Map.",
+    github: "https://github.com/tushydan007/proforce_galaxies_show_website",
+    live: "https://proforcegalaxies.vercel.app/services",
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
-    title: "Enterprise Analytics Dashboard",
-    desc: "React.js + Recharts, Tailwind CSS, Kubernetes on EKS.",
-    github: "https://github.com/cornelius-ezeh/dlho-dashboard",
-    live: "https://dashboard.corneliusezeh.dev",
+    title: "Geospatial Analytics App",
+    desc: "React.js, Tailwind CSS, Leaflet.",
+    github: "https://github.com/tushydan007/real_estate_proforce_demo",
+    live: "https://pfg-asset-watch.vercel.app/",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
     title: "Learning Management System",
-    desc: "Next.js SSR, Video Streaming, AWS S3 + CloudFront.",
-    github: "https://github.com/cornelius-ezeh/ingryd-lms",
-    live: "https://lms.corneliusezeh.dev",
+    desc: "Next.js, AWS S3 + Docker.",
+    github: "https://github.com/tushydan007/",
+    live: "https://ingryd-academy.vercel.app/",
     img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&auto=format&q=80",
   },
 ];
