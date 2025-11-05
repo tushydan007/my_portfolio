@@ -80,6 +80,14 @@ export default function Contact() {
     return () => ctx.revert();
   }, []);
 
+  // ── Initialize EmailJS ───────────────────────────────────
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
+
   // ── EmailJS Submit Handler ────────────────────────────────
   const onSubmit = async (data: ContactFormValues) => {
     const toastId = toast.loading("Sending your message...");
@@ -91,7 +99,9 @@ export default function Contact() {
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       if (!serviceID || !templateID || !publicKey) {
-        throw new Error("EmailJS credentials missing");
+        throw new Error(
+          "EmailJS credentials missing. Please configure environment variables."
+        );
       }
 
       await emailjs.send(
@@ -100,18 +110,22 @@ export default function Contact() {
         {
           from_name: data.name,
           from_email: data.email,
+          to_email: "cornzeh@gmail.com",
           message: data.message,
+          reply_to: data.email,
         },
         publicKey
       );
 
-      toast.success("Message sent successfully! I’ll reply soon.", {
+      toast.success("Message sent successfully! I'll reply soon.", {
         id: toastId,
       });
       reset();
     } catch (error) {
       console.error("EmailJS error:", error);
-      toast.error("Failed to send message. Please try again.", { id: toastId });
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      toast.error(`Failed to send message: ${errorMessage}`, { id: toastId });
     }
   };
 

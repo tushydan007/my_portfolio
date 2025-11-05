@@ -83,7 +83,7 @@ export default function Hero() {
 
   return (
     <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center min-h-[600px]">
-      <div className="space-y-8">
+      <div className="space-y-8 mt-32 md:mt-0">
         <h1
           ref={titleRef}
           className="text-5xl md:text-7xl font-bold leading-tight"

@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const navItems = [
     "Home",
     "About",
@@ -12,22 +16,6 @@ export default function Navbar() {
     "Certifications",
     "Contact",
   ];
-
-  const handleNavClick = () => {
-    setIsMenuOpen(false);
-  };
-
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
 
   return (
     <nav className="container mx-auto px-4 sm:px-6 py-4">
@@ -48,53 +36,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="mobile-menu-btn md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50"
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? "rotate-45 translate-y-2 bg-white" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? "opacity-0 bg-white" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
-              isMenuOpen ? "-rotate-45 -translate-y-2 bg-white" : ""
-            }`}
-          ></span>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 z-[60] md:hidden transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.95)",
-          backdropFilter: "blur(12px)",
-        }}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={handleNavClick}
-              className="nav-link text-white text-2xl font-medium hover:text-primary transition-colors py-2 px-4"
-              style={{ color: "#ffffff" }}
+        {/* Mobile Menu - ShadCN Sheet */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <button
+              className="mobile-menu-btn md:hidden flex items-center justify-center w-10 h-10 rounded-md hover:bg-accent focus:outline-none active:outline-none"
+              aria-label="Toggle menu"
             >
-              {item}
-            </a>
-          ))}
-        </div>
+              <Menu className="h-6 w-6 text-gray-700 mobile-menu-icon" />
+            </button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-[80%] sm:max-w-md bg-black/70 backdrop-blur-lg"
+          >
+            <div className="flex flex-col items-center justify-center h-full space-y-6">
+              {navItems.map((item) => (
+                <SheetClose key={item} asChild>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="nav-link text-white text-2xl font-medium hover:text-primary transition-colors py-2 px-4 w-full text-center"
+                  >
+                    {item}
+                  </a>
+                </SheetClose>
+              ))}
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );

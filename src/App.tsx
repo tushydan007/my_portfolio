@@ -74,18 +74,20 @@ export default function App() {
         });
       }
 
-      // Change hamburger button color when scrolled
+      // Change hamburger button icon color when scrolled
       if (mobileMenuBtn) {
-        const hamburgerLines = mobileMenuBtn.querySelectorAll("span");
-        gsap.to(hamburgerLines, {
-          backgroundColor: "#ffffff",
-          scrollTrigger: {
-            trigger: "#hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
+        const menuIcon = mobileMenuBtn.querySelector(".mobile-menu-icon");
+        if (menuIcon) {
+          gsap.to(menuIcon, {
+            color: "#ffffff",
+            scrollTrigger: {
+              trigger: "#hero",
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+        }
       }
     }
 
