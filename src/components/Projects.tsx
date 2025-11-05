@@ -26,7 +26,7 @@ const projects: Project[] = [
     desc: "React.js with TypeScript, Leaflet Map.",
     github: "https://github.com/tushydan007/proforce_galaxies_show_website",
     live: "https://proforcegalaxies.vercel.app",
-    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&auto=format&q=80",
+    img: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
     title: "Asset monitoring from space using Geospatial Technology",
