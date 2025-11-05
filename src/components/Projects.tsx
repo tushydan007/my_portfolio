@@ -29,15 +29,15 @@ const projects: Project[] = [
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
-    title: "Geospatial Analytics App",
-    desc: "React.js, Tailwind CSS, Leaflet.",
+    title: "Asset monitoring from space using Geospatial Technology",
+    desc: "React.js, Tailwind CSS, Leaflet, React Leaflet.",
     github: "https://github.com/tushydan007/real_estate_proforce_demo",
     live: "https://pfg-asset-watch.vercel.app",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
     title: "Learning Management System",
-    desc: "Next.js, AWS S3 + Docker.",
+    desc: "Next.js, Tailwind css, AWS S3 + Docker.",
     github: "https://github.com/tushydan007/",
     live: "https://ingryd-academy.vercel.app/",
     img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&auto=format&q=80",
