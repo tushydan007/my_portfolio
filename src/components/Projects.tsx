@@ -25,14 +25,14 @@ const projects: Project[] = [
     title: "Geospatial and Satellite Imagery Services",
     desc: "React.js with TypeScript, Leaflet Map.",
     github: "https://github.com/tushydan007/proforce_galaxies_show_website",
-    live: "https://proforcegalaxies.vercel.app/services",
+    live: "https://proforcegalaxies.vercel.app",
     img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
     title: "Geospatial Analytics App",
     desc: "React.js, Tailwind CSS, Leaflet.",
     github: "https://github.com/tushydan007/real_estate_proforce_demo",
-    live: "https://pfg-asset-watch.vercel.app/",
+    live: "https://pfg-asset-watch.vercel.app",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format&q=80",
   },
   {
