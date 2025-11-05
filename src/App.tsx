@@ -22,6 +22,14 @@ export default function App() {
       const navLogo = navRef.current.querySelector(".nav-logo");
       const mobileMenuBtn = navRef.current.querySelector(".mobile-menu-btn");
 
+      // Set initial navbar background to white/transparent
+      gsap.set(navRef.current, {
+        backgroundColor: "rgba(255,255,255,0.95)",
+        backdropFilter: "blur(12px)",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+      });
+
+      // Animate navbar background from white to black when scrolling
       gsap.to(navRef.current, {
         backgroundColor: "rgba(0,0,0,0.95)",
         backdropFilter: "blur(12px)",
@@ -34,18 +42,26 @@ export default function App() {
         },
       });
 
-      // Change text colors to white when scrolled - select all nav links including newly added ones
-      const updateNavLinksColor = () => {
-        const allNavLinks = navRef.current?.querySelectorAll(".nav-link") || [];
-        allNavLinks.forEach((link) => {
-          if (link instanceof HTMLElement) {
-            gsap.set(link, { color: "#ffffff" });
-          }
-        });
-      };
-
-      // Initial setup for all nav links
+      // Set initial colors to black/dark gray (visible on white background)
       const navLinks = navRef.current.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => {
+        if (link instanceof HTMLElement) {
+          gsap.set(link, { color: "#374151" }); // gray-700
+        }
+      });
+
+      if (navLogo) {
+        gsap.set(navLogo, { color: "" }); // Keep primary color initially
+      }
+
+      if (mobileMenuBtn) {
+        const menuIcon = mobileMenuBtn.querySelector(".mobile-menu-icon");
+        if (menuIcon) {
+          gsap.set(menuIcon, { color: "#374151" }); // gray-700
+        }
+      }
+
+      // Animate text colors from black to white when scrolling
       if (navLinks.length > 0) {
         gsap.to(navLinks, {
           color: "#ffffff",
@@ -54,10 +70,6 @@ export default function App() {
             start: "top top",
             end: "bottom top",
             scrub: true,
-            onUpdate: () => {
-              // Re-select and update all links including newly added ones
-              updateNavLinksColor();
-            },
           },
         });
       }
