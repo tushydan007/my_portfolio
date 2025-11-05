@@ -74,9 +74,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-black/95 backdrop-blur-lg z-40 md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[60] md:hidden transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.95)",
+          backdropFilter: "blur(12px)",
+        }}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           {navItems.map((item) => (
@@ -85,6 +89,7 @@ export default function Navbar() {
               href={`#${item.toLowerCase()}`}
               onClick={handleNavClick}
               className="nav-link text-white text-2xl font-medium hover:text-primary transition-colors py-2 px-4"
+              style={{ color: "#ffffff" }}
             >
               {item}
             </a>
