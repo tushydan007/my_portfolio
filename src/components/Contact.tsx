@@ -108,11 +108,9 @@ export default function Contact() {
         serviceID,
         templateID,
         {
-          from_name: data.name,
-          from_email: data.email,
-          to_email: "cornzeh@gmail.com",
+          name: data.name,
+          email: data.email,
           message: data.message,
-          reply_to: data.email,
         },
         publicKey
       );

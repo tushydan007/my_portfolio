@@ -25,28 +25,30 @@ To enable the contact form to send emails to your mailbox (cornzeh@gmail.com), f
 
    **To Email:** `cornzeh@gmail.com`
 
-   **Subject:** `New Contact Form Message from {{from_name}}`
+   **From Name:** `{{email}}`
 
-   **Content:**
+   **From Email:** Use Default Email Address
 
+   **Reply To:** `{{email}}`
+
+   **Subject:** `New Contact Form Message from: {{email}}`
+
+   **Content (Body):**
    ```
    You have received a new message from your portfolio contact form.
 
-   From: {{from_name}}
-   Email: {{from_email}}
-   Reply To: {{reply_to}}
+   From: {{name}}
+   Email: {{email}}
 
    Message:
    {{message}}
    ```
 
-4. Make sure to include these template variables:
+4. Make sure to include these template variables in your template:
 
-   - `{{from_name}}`
-   - `{{from_email}}`
-   - `{{to_email}}`
-   - `{{message}}`
-   - `{{reply_to}}`
+   - `{{name}}` - Sender's name
+   - `{{email}}` - Sender's email address
+   - `{{message}}` - The message content
 
 5. Copy the **Template ID** (you'll need this later)
 
