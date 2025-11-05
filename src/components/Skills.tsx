@@ -51,8 +51,8 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="container mx-auto px-6">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+    <div className="container mx-auto px-6 py-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
         Technical Skills
       </h2>
       <div className="grid md:grid-cols-2 gap-12">

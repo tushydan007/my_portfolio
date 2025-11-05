@@ -7,6 +7,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import { Toaster } from "react-hot-toast";
 
@@ -18,10 +19,13 @@ export default function App() {
   useEffect(() => {
     // Navbar scroll effect
     if (navRef.current) {
+      const navLogo = navRef.current.querySelector(".nav-logo");
+      const mobileMenuBtn = navRef.current.querySelector(".mobile-menu-btn");
+
       gsap.to(navRef.current, {
-        backgroundColor: "rgba(255,255,255,0.95)",
+        backgroundColor: "rgba(0,0,0,0.95)",
         backdropFilter: "blur(12px)",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
         scrollTrigger: {
           trigger: "#hero",
           start: "top top",
@@ -29,6 +33,60 @@ export default function App() {
           scrub: true,
         },
       });
+
+      // Change text colors to white when scrolled - select all nav links including newly added ones
+      const updateNavLinksColor = () => {
+        const allNavLinks = navRef.current?.querySelectorAll(".nav-link") || [];
+        allNavLinks.forEach((link) => {
+          if (link instanceof HTMLElement) {
+            gsap.set(link, { color: "#ffffff" });
+          }
+        });
+      };
+
+      // Initial setup for all nav links
+      const navLinks = navRef.current.querySelectorAll(".nav-link");
+      if (navLinks.length > 0) {
+        gsap.to(navLinks, {
+          color: "#ffffff",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            onUpdate: () => {
+              // Re-select and update all links including newly added ones
+              updateNavLinksColor();
+            },
+          },
+        });
+      }
+
+      if (navLogo) {
+        gsap.to(navLogo, {
+          color: "#ffffff",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
+      // Change hamburger button color when scrolled
+      if (mobileMenuBtn) {
+        const hamburgerLines = mobileMenuBtn.querySelectorAll("span");
+        gsap.to(hamburgerLines, {
+          backgroundColor: "#ffffff",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
     }
 
     // Section fade-ins with proper initial visibility
@@ -112,6 +170,9 @@ export default function App() {
         </section>
         <section id="projects" className="section bg-gray-50">
           <Projects />
+        </section>
+        <section id="certifications" className="section bg-white">
+          <Certifications />
         </section>
         <section id="contact" className="section bg-primary text-white">
           <Contact />

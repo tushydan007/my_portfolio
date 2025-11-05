@@ -196,14 +196,14 @@ export default function Contact() {
         </Card>
 
         {/* Direct Email */}
-        <p className="mt-8 text-center text-sm text-white/80">
-          Or email me directly at{" "}
+        <p className="mt-8 text-center text-sm text-white flex flex-col justify-center items-center">
+          Or email me directly at:
           <a
-            href="mailto:cornelius.ezeh@email.com"
-            className="font-medium underline hover:text-white flex items-center justify-center gap-1"
+            href="mailto:cornzeh@gmail.com"
+            className="font-medium text-white flex items-center justify-center gap-1 my-2 text-xl"
           >
-            <Mail className="w-4 h-4" />
-            cornelius.ezeh@email.com
+            <Mail className="w-5 h-5" />
+            cornzeh@gmail.com
           </a>
         </p>
       </div>

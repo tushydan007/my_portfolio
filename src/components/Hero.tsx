@@ -115,11 +115,9 @@ export default function Hero() {
         </h1>
         <p ref={subtitleRef} className="text-xl text-gray-600 max-w-lg">
           A passionate{" "}
-          <strong className="text-primary">
-            Frontend & Full-Stack Developer
-          </strong>{" "}
-          with 5+ years crafting pixel-perfect, performant web experiences using
-          React.js, Next.js, and modern DevOps tools.
+          <strong className="text-primary">Full-stack Developer</strong> with 5+
+          years crafting pixel-perfect, performant web experiences using
+          React.js, Next.js, Django and modern DevOps tools.
         </p>
         <div ref={buttonsRef} className="flex space-x-4">
           <a href="#projects" className="btn btn-primary">
@@ -134,11 +132,10 @@ export default function Hero() {
         ref={imgRef}
         className="relative flex items-center justify-center min-h-[400px] md:min-h-[500px]"
       >
-        <div className="bg-linear-to-br from-gray-800 to-gray-900 rounded-full w-80 h-80 md:w-96 md:h-96 mx-auto shadow-2xl opacity-80"></div>
         <img
           src="/Cornelius.jpg"
           alt="Cornelius Ezeh"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full w-72 h-72 md:w-80 md:h-80 object-cover border-8 border-white shadow-xl z-10"
+          className="relative z-10 rounded-full w-72 h-72 md:w-80 md:h-80 object-cover border-8 border-white shadow-2xl"
           loading="eager"
         />
       </div>

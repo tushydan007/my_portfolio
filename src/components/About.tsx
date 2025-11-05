@@ -44,7 +44,7 @@ export default function About() {
 
   const stats = [
     { label: "Years Experience", value: "5+" },
-    { label: "Projects Delivered", value: "20+" },
+    { label: "Projects Delivered", value: "10+" },
     { label: "Team Members Led", value: "6" },
     { label: "Uptime Achieved", value: "99.9%" },
   ];
@@ -61,7 +61,7 @@ export default function About() {
           <p>
             I'm a{" "}
             <span className="font-semibold text-foreground">
-              results-driven Frontend & Full-Stack Developer
+              results-driven Full-Stack Developer
             </span>{" "}
             based in Lagos, Nigeria, with a passion for building scalable,
             user-centric applications.
@@ -69,12 +69,13 @@ export default function About() {
           <p>
             Starting my journey at <strong>Bincom Software Academy</strong>,
             I've grown into a <strong>Team Lead</strong> role, delivering
-            production-grade solutions across education, real estate, and
-            enterprise platforms.
+            production-grade solutions across education, real estate, geospatial
+            and enterprise platforms.
           </p>
           <p>
-            My expertise spans <strong>React.js, Next.js, TypeScript</strong>,
-            and <strong>DevOps (Docker, Kubernetes, AWS, CI/CD)</strong>. I love
+            My expertise spans{" "}
+            <strong>React.js, Next.js, TypeScript, Python, Django</strong>, and{" "}
+            <strong>DevOps (Docker, Kubernetes, AWS, CI/CD)</strong>. I love
             clean code, performance optimization, and mentoring the next
             generation of developers.
           </p>
